@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docker Build Cpu"
+  short_description: "Maintain CPU-aware Docker builds and project docs"
+  default_prompt: "Use $docker-build-cpu to update this repository while preserving its build and documentation policy."
