@@ -1,0 +1,19 @@
+@startuml
+!theme plain
+
+left to right direction
+
+rectangle "Codex" as Codex
+rectangle "AGENTS.md" as Agents
+rectangle "docker-build.sh" as Script
+rectangle "BuildKit builder" as Builder
+rectangle "Linux cgroup" as Cgroup
+
+Codex --> Agents : read policy
+Agents --> Script : invoke fixed script
+Script --> Builder : create or reuse
+Builder --> Cgroup : cpu-shares=256
+Cgroup --> Builder : dynamic CPU time
+
+@enduml
+
